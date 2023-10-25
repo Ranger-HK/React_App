@@ -24,6 +24,13 @@ class Countable extends Component{
         })
     }
 
+    ResetCount(){
+        this.setState({
+            count : this.state.count = 0
+        })
+    }
+
+
 
     render() {
         const {classes} = this.props
@@ -39,20 +46,31 @@ class Countable extends Component{
                             console.log("Clicked")
                             this.incrementCount()
                         }}
+
                     >
                         Increase</Button>
 
-                    <div  style={{marginTop:"10px"}}
-                    >
+
                     <Button
                     variant="contained"
                     onClick={() => {
                         console.log("Clicked")
                         this.decrementCount()
                     }}
+                    style={{marginLeft:"20px"}}
                 >
                     Decrease</Button>
-                    </div>
+
+                <Button
+                    variant="contained"
+                    onClick={() => {
+                        console.log("Clicked")
+                        this.ResetCount()
+                    }}
+                    style={{marginLeft:"20px",backgroundColor:"red"}}
+                >
+                    Reset</Button>
+
             </div>
         )
     }
